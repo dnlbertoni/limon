@@ -1,0 +1,51 @@
+version: "3.1"
+services:
+    db:
+        image: mysql
+        ports: 
+            - "33061:3306"
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} 
+        volumes:
+            - ./dump:/docker-entrypoint-initdb.d
+            - ./conf:/etc/mysql/conf.d
+            - persistent:/var/lib/mysql
+        networks:
+            - default
+    www:
+#        build: ./php/.
+        image: mad93/codeigniter2
+        ports: 
+            - "8080:80"
+        volumes:
+            - ./www:/var/www/httpsdocs
+        environment:
+            ERP_HOSTNAME: ${ERP_HOSTNAME}
+            ERP_DATABASE: ${ERP_DATABASE}
+            ERP_USERNAME: ${ERP_USERNAME}
+            ERP_PASSWORD: ${ERP_PASSWORD}
+            ERP_SENCRYPT: ${ERP_SENCRYPT}
+            ERP_CAJAPPAL: ${ERP_CAJAPPAL}
+            ERP_PRREMITO: ${ERP_PRREMITO}
+            ERP_PRCARTEL: ${ERP_PRCARTEL}
+            ERP_EMP_NOMB: ${ERP_EMP_NOMB}
+        links:
+            - db
+        networks:
+            - default
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 8081:80
+        environment:
+            MYSQL_USER: root
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} 
+volumes:
+    persistent:

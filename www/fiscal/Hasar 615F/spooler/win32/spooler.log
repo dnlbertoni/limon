@@ -1,0 +1,420 @@
+15/02-19:20:23: **START SPOOLER**
+15/02-19:20:23: A abrir COM4
+15/02-19:20:23: Comando completado: *
+15/02-19:20:23: Comando completado: *
+15/02-19:20:23: Comando completado: D| |0.0|C|0
+15/02-19:20:23: Comando completado: E
+15/02-19:20:23: Comando completado: J
+15/02-19:20:36: Enviando contenido de u:\3\mandar\estado.txt
+15/02-19:20:36: Comando completado: *
+15/02-19:20:36: Respuesta: 008006000000200000000
+15/02-19:20:36: Archivo u:\3\mandar\estado.txt finalizado
+15/02-19:22:00: **START SPOOLER**
+15/02-19:22:00: A abrir COM4
+15/02-19:22:00: Comando completado: *
+15/02-19:22:00: Comando completado: *
+15/02-19:22:00: Comando completado: D| |0.0|C|0
+15/02-19:22:00: Comando completado: E
+15/02-19:22:00: Comando completado: J
+15/02-19:23:51: **START SPOOLER**
+15/02-19:23:51: A abrir COM4
+15/02-19:23:51: Comando completado: *
+15/02-19:23:51: Comando completado: *
+15/02-19:23:51: Comando completado: D| |0.0|C|0
+15/02-19:23:51: Comando completado: E
+15/02-19:23:51: Comando completado: J
+15/02-19:24:38: Enviando contenido de u:\4\mandar\t6981.txt
+15/02-19:24:38: Comando completado: @|B|T
+15/02-19:24:38: Respuesta: 008036001
+15/02-19:24:38: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-19:24:38: Respuesta: 00803600
+15/02-19:24:38: Comando completado: C|P|Subtotal|1
+15/02-19:24:38: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-19:24:38: Comando completado: D|Efectivo|0.01|T|1
+15/02-19:24:38: Respuesta: 00803600+0.00
+15/02-19:24:38: Comando completado: E
+15/02-19:24:38: Respuesta: 008006001
+15/02-19:24:38: Archivo u:\4\mandar\t6981.txt finalizado
+15/02-19:25:11: Enviando contenido de u:\4\mandar\t6981.txt
+15/02-19:25:11: Comando completado: @|B|T
+15/02-19:25:11: Respuesta: 008036002
+15/02-19:25:11: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-19:25:11: Respuesta: 00803600
+15/02-19:25:11: Comando completado: C|P|Subtotal|1
+15/02-19:25:11: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-19:25:11: Comando completado: D|Efectivo|0.01|T|1
+15/02-19:25:11: Respuesta: 00803600+0.00
+15/02-19:25:11: Comando completado: E
+15/02-19:25:11: Respuesta: 008006002
+15/02-19:25:11: Archivo u:\4\mandar\t6981.txt finalizado
+15/02-19:25:41: Enviando contenido de u:\4\mandar\t6981.txt
+15/02-19:25:41: Comando completado: @|B|T
+15/02-19:25:41: Respuesta: 008036003
+15/02-19:25:41: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-19:25:41: Respuesta: 00803600
+15/02-19:25:41: Comando completado: C|P|Subtotal|1
+15/02-19:25:41: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-19:25:41: Comando completado: D|Efectivo|0.01|T|1
+15/02-19:25:41: Respuesta: 00803600+0.00
+15/02-19:25:41: Comando completado: E
+15/02-19:25:41: Respuesta: 008006003
+15/02-19:25:42: Archivo u:\4\mandar\t6981.txt finalizado
+15/02-19:33:19: Enviando contenido de u:\4\mandar\t6981.txt
+15/02-19:33:19: Comando completado: @|B|T
+15/02-19:33:19: Respuesta: 008036004
+15/02-19:33:19: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-19:33:19: Respuesta: 00803600
+15/02-19:33:19: Comando completado: C|P|Subtotal|1
+15/02-19:33:19: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-19:33:19: Comando completado: D|Efectivo|0.01|T|1
+15/02-19:33:19: Respuesta: 00803600+0.00
+15/02-19:33:19: Comando completado: E
+15/02-19:33:19: Respuesta: 008006004
+15/02-19:33:19: Archivo u:\4\mandar\t6981.txt finalizado
+15/02-19:34:39: Enviando contenido de u:\4\mandar\t6981.txt
+15/02-19:34:39: Comando completado: @|B|T
+15/02-19:34:39: Respuesta: 008036005
+15/02-19:34:39: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-19:34:39: Respuesta: 00803600
+15/02-19:34:39: Comando completado: C|P|Subtotal|1
+15/02-19:34:39: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-19:34:39: Comando completado: D|Efectivo|0.01|T|1
+15/02-19:34:39: Respuesta: 00803600+0.00
+15/02-19:34:39: Comando completado: E
+15/02-19:34:39: Respuesta: 008006005
+15/02-19:34:39: Archivo u:\4\mandar\t6981.txt finalizado
+15/02-19:36:49: Enviando contenido de u:\4\mandar\f6981.txt
+15/02-19:36:49: Comando completado: @|B|T
+15/02-19:36:49: Respuesta: 008036006
+15/02-19:36:49: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-19:36:49: Respuesta: 00803600
+15/02-19:36:49: Comando completado: C|P|Subtotal|1
+15/02-19:36:49: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-19:36:49: Comando completado: D|Efectivo|0.01|T|1
+15/02-19:36:49: Respuesta: 00803600+0.00
+15/02-19:36:49: Comando completado: E
+15/02-19:36:49: Respuesta: 008006006
+15/02-19:36:49: Archivo u:\4\mandar\f6981.txt finalizado
+15/02-19:39:35: Enviando contenido de u:\4\mandar\f6981.txt
+15/02-19:39:35: Comando completado: b|CONSUMIDOR FINAL'|NULL|3|2|S/D'
+15/02-19:39:35: Respuesta: 00808610Error en el numero de parametros
+15/02-19:39:35: Error no recuperable en impresion:
+15/02-19:39:35: Datos no validos en un campo
+15/02-19:39:35: Comando completado: D| |0.0|C|0
+15/02-19:39:35: Comando completado: E
+15/02-19:39:35: Comando completado: J
+15/02-19:39:35: Comando completado: @|B|T
+15/02-19:39:35: Respuesta: 008036007
+15/02-19:39:35: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-19:39:35: Respuesta: 00803600
+15/02-19:39:35: Comando completado: C|P|Subtotal|1
+15/02-19:39:35: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-19:39:35: Comando completado: D|Efectivo|0.01|T|1
+15/02-19:39:35: Respuesta: 00803600+0.00
+15/02-19:39:35: Comando completado: E
+15/02-19:39:35: Respuesta: 008006007
+15/02-19:39:35: Archivo u:\4\mandar\f6981.txt finalizado
+15/02-19:44:14: Enviando contenido de u:\4\mandar\f6981.txt
+15/02-19:44:14: Comando completado: b|ONSUMIDOR FINAL|NULL|3| |/D
+15/02-19:44:14: Respuesta: 00808610Error en el numero de parametros
+15/02-19:44:14: Error no recuperable en impresion:
+15/02-19:44:14: Datos no validos en un campo
+15/02-19:44:14: Comando completado: D| |0.0|C|0
+15/02-19:44:14: Comando completado: E
+15/02-19:44:14: Comando completado: J
+15/02-19:44:14: Comando completado: @|B|T
+15/02-19:44:14: Respuesta: 008036008
+15/02-19:44:14: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-19:44:14: Respuesta: 00803600
+15/02-19:44:14: Comando completado: C|P|Subtotal|1
+15/02-19:44:14: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-19:44:14: Comando completado: D|Efectivo|0.01|T|1
+15/02-19:44:14: Respuesta: 00803600+0.00
+15/02-19:44:14: Comando completado: E
+15/02-19:44:14: Respuesta: 008006008
+15/02-19:44:14: Archivo u:\4\mandar\f6981.txt finalizado
+15/02-19:52:08: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-19:52:08: Comando completado: b|CONSUMIDOR FINAL|0|3| |S/D
+15/02-19:52:08: Respuesta: 00808610Error en el numero de parametros
+15/02-19:52:08: Error no recuperable en impresion:
+15/02-19:52:08: Datos no validos en un campo
+15/02-19:52:08: Comando completado: D| |0.0|C|0
+15/02-19:52:08: Comando completado: E
+15/02-19:52:08: Comando completado: J
+15/02-19:52:08: Comando completado: @|B|T
+15/02-19:52:08: Respuesta: 008036009
+15/02-19:52:08: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-19:52:08: Respuesta: 00803600
+15/02-19:52:08: Comando completado: C|P|Subtotal|1
+15/02-19:52:08: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-19:52:08: Comando completado: D|Efectivo|0.01|T|1
+15/02-19:52:08: Respuesta: 00803600+0.00
+15/02-19:52:08: Comando completado: E
+15/02-19:52:08: Respuesta: 008006009
+15/02-19:52:08: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:02:25: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:02:25: Comando completado: b|CONSUMIDOR FINAL|0|C| |S/D
+15/02-20:02:25: Respuesta: 00808610Error en el numero de parametros
+15/02-20:02:25: Error no recuperable en impresion:
+15/02-20:02:25: Datos no validos en un campo
+15/02-20:02:25: Comando completado: D| |0.0|C|0
+15/02-20:02:25: Comando completado: E
+15/02-20:02:25: Comando completado: J
+15/02-20:02:25: Comando completado: @|B|T
+15/02-20:02:25: Respuesta: 0080360010
+15/02-20:02:25: Comando completado: B|MANI SALADO PEHUAMAR|1.00|7.50|21.00|M|0.0|1|T
+15/02-20:02:25: Respuesta: 00803600
+15/02-20:02:25: Comando completado: C|P|Subtotal|1
+15/02-20:02:25: Respuesta: 0080360017.5001.3020.0000.0000.000
+15/02-20:02:25: Comando completado: D|Efectivo|7.50|T|1
+15/02-20:02:25: Respuesta: 00803600+0.00
+15/02-20:02:25: Comando completado: E
+15/02-20:02:25: Respuesta: 0080060010
+15/02-20:02:25: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:05:16: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:05:16: Comando completado: b|CONSUMIDOR FINAL| |C| |S/D
+15/02-20:05:16: Respuesta: 00808610Error en el numero de parametros
+15/02-20:05:16: Error no recuperable en impresion:
+15/02-20:05:16: Datos no validos en un campo
+15/02-20:05:16: Comando completado: D| |0.0|C|0
+15/02-20:05:16: Comando completado: E
+15/02-20:05:16: Comando completado: J
+15/02-20:05:16: Comando completado: @|B|T
+15/02-20:05:16: Respuesta: 0080360011
+15/02-20:05:16: Comando completado: B|MANI SALADO PEHUAMAR|1.00|7.50|21.00|M|0.0|1|T
+15/02-20:05:16: Respuesta: 00803600
+15/02-20:05:16: Comando completado: C|P|Subtotal|1
+15/02-20:05:16: Respuesta: 0080360017.5001.3020.0000.0000.000
+15/02-20:05:16: Comando completado: D|Efectivo|7.50|T|1
+15/02-20:05:16: Respuesta: 00803600+0.00
+15/02-20:05:16: Comando completado: E
+15/02-20:05:16: Respuesta: 0080060011
+15/02-20:05:16: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:06:40: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:06:40: Comando completado: b|CONSUMIDOR FINAL|0|C|
+15/02-20:06:40: Respuesta: 00808610Error en campo de datos
+15/02-20:06:40: Error no recuperable en impresion:
+15/02-20:06:40: Datos no validos en un campo
+15/02-20:06:40: Comando completado: D| |0.0|C|0
+15/02-20:06:40: Comando completado: E
+15/02-20:06:40: Comando completado: J
+15/02-20:06:40: Comando completado: @|B|T
+15/02-20:06:40: Respuesta: 0080360012
+15/02-20:06:40: Comando completado: B|MANI SALADO PEHUAMAR|1.00|7.50|21.00|M|0.0|1|T
+15/02-20:06:40: Respuesta: 00803600
+15/02-20:06:40: Comando completado: C|P|Subtotal|1
+15/02-20:06:40: Respuesta: 0080360017.5001.3020.0000.0000.000
+15/02-20:06:40: Comando completado: D|Efectivo|7.50|T|1
+15/02-20:06:40: Respuesta: 00803600+0.00
+15/02-20:06:40: Comando completado: E
+15/02-20:06:40: Respuesta: 0080060012
+15/02-20:06:40: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:08:08: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:08:08: Comando completado: b|CONSUMIDOR FINAL| |C|
+15/02-20:08:08: Respuesta: 00808610Error en campo de datos
+15/02-20:08:08: Error no recuperable en impresion:
+15/02-20:08:08: Datos no validos en un campo
+15/02-20:08:08: Comando completado: D| |0.0|C|0
+15/02-20:08:08: Comando completado: E
+15/02-20:08:08: Comando completado: J
+15/02-20:08:08: Comando completado: @|B|T
+15/02-20:08:08: Respuesta: 0080360013
+15/02-20:08:08: Comando completado: B|MANI SALADO PEHUAMAR|1.00|7.50|21.00|M|0.0|1|T
+15/02-20:08:08: Respuesta: 00803600
+15/02-20:08:08: Comando completado: C|P|Subtotal|1
+15/02-20:08:08: Respuesta: 0080360017.5001.3020.0000.0000.000
+15/02-20:08:08: Comando completado: D|Efectivo|7.50|T|1
+15/02-20:08:08: Respuesta: 00803600+0.00
+15/02-20:08:08: Comando completado: E
+15/02-20:08:08: Respuesta: 0080060013
+15/02-20:08:08: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:09:34: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:09:34: Comando completado: b|CONSUMIDOR FINAL|26866703|C|2|S/D
+15/02-20:09:34: Respuesta: 00808610Error en el numero de parametros
+15/02-20:09:34: Error no recuperable en impresion:
+15/02-20:09:34: Datos no validos en un campo
+15/02-20:09:34: Comando completado: D| |0.0|C|0
+15/02-20:09:34: Comando completado: E
+15/02-20:09:34: Comando completado: J
+15/02-20:09:34: Comando completado: @|B|T
+15/02-20:09:34: Respuesta: 0080360014
+15/02-20:09:34: Comando completado: B|MANI SALADO PEHUAMAR|1.00|7.50|21.00|M|0.0|1|T
+15/02-20:09:34: Respuesta: 00803600
+15/02-20:09:34: Comando completado: C|P|Subtotal|1
+15/02-20:09:34: Respuesta: 0080360017.5001.3020.0000.0000.000
+15/02-20:09:34: Comando completado: D|Efectivo|7.50|T|1
+15/02-20:09:34: Respuesta: 00803600+0.00
+15/02-20:09:34: Comando completado: E
+15/02-20:09:34: Respuesta: 0080060014
+15/02-20:09:34: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:10:12: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:10:12: Comando completado: b|CONSUMIDOR FINAL|26866703|C|2
+15/02-20:10:12: Respuesta: 00800600
+15/02-20:10:12: Comando completado: @|B|T
+15/02-20:10:12: Respuesta: 0080360015
+15/02-20:10:12: Comando completado: B|MANI SALADO PEHUAMAR|1.00|7.50|21.00|M|0.0|1|T
+15/02-20:10:12: Respuesta: 00803600
+15/02-20:10:12: Comando completado: C|P|Subtotal|1
+15/02-20:10:12: Respuesta: 0080360017.5001.3020.0000.0000.000
+15/02-20:10:12: Comando completado: D|Efectivo|7.50|T|1
+15/02-20:10:12: Respuesta: 00803600+0.00
+15/02-20:10:12: Comando completado: E
+15/02-20:10:12: Respuesta: 0080060015
+15/02-20:10:12: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:10:41: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:10:41: Comando completado: b|CONSUMIDOR FINAL|0|C|2
+15/02-20:10:41: Respuesta: 00800600
+15/02-20:10:41: Comando completado: @|B|T
+15/02-20:10:41: Respuesta: 0080360016
+15/02-20:10:41: Comando completado: B|MANI SALADO PEHUAMAR|1.00|7.50|21.00|M|0.0|1|T
+15/02-20:10:41: Respuesta: 00803600
+15/02-20:10:41: Comando completado: C|P|Subtotal|1
+15/02-20:10:41: Respuesta: 0080360017.5001.3020.0000.0000.000
+15/02-20:10:41: Comando completado: D|Efectivo|7.50|T|1
+15/02-20:10:41: Respuesta: 00803600+0.00
+15/02-20:10:41: Comando completado: E
+15/02-20:10:41: Respuesta: 0080060016
+15/02-20:10:41: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:10:55: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:10:55: Comando completado: b|CONSUMIDOR FINAL|0|C|2
+15/02-20:10:55: Respuesta: 00800600
+15/02-20:10:55: Comando completado: @|B|T
+15/02-20:10:55: Respuesta: 0080360017
+15/02-20:10:55: Comando completado: B|MANI SALADO PEHUAMAR|1.00|7.50|21.00|M|0.0|1|T
+15/02-20:10:55: Respuesta: 00803600
+15/02-20:10:55: Comando completado: C|P|Subtotal|1
+15/02-20:10:55: Respuesta: 0080360017.5001.3020.0000.0000.000
+15/02-20:10:55: Comando completado: D|Efectivo|7.50|T|1
+15/02-20:10:55: Respuesta: 00803600+0.00
+15/02-20:10:55: Comando completado: E
+15/02-20:10:55: Respuesta: 0080060017
+15/02-20:10:55: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:11:55: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:11:55: Comando completado: b|CONSUMIDOR FINAL|0|C|2|
+15/02-20:11:55: Respuesta: 00808610Error en el numero de parametros
+15/02-20:11:55: Error no recuperable en impresion:
+15/02-20:11:55: Datos no validos en un campo
+15/02-20:11:55: Comando completado: D| |0.0|C|0
+15/02-20:11:55: Comando completado: E
+15/02-20:11:55: Comando completado: J
+15/02-20:11:55: Comando completado: @|B|T
+15/02-20:11:55: Respuesta: 0080360018
+15/02-20:11:55: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-20:11:55: Respuesta: 00803600
+15/02-20:11:55: Comando completado: C|P|Subtotal|1
+15/02-20:11:55: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-20:11:55: Comando completado: D|Efectivo|0.01|T|1
+15/02-20:11:55: Respuesta: 00803600+0.00
+15/02-20:11:55: Comando completado: E
+15/02-20:11:55: Respuesta: 0080060018
+15/02-20:11:55: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:12:22: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:12:22: Comando completado: b|CONSUMIDOR FINAL|0|C|2
+15/02-20:12:22: Respuesta: 00800600
+15/02-20:12:22: Comando completado: @|B|T
+15/02-20:12:22: Respuesta: 0080360019
+15/02-20:12:22: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-20:12:22: Respuesta: 00803600
+15/02-20:12:22: Comando completado: C|P|Subtotal|1
+15/02-20:12:22: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-20:12:22: Comando completado: D|Efectivo|0.01|T|1
+15/02-20:12:22: Respuesta: 00803600+0.00
+15/02-20:12:22: Comando completado: E
+15/02-20:12:22: Respuesta: 0080060019
+15/02-20:12:22: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:12:39: Enviando contenido de u:\4\mandar\f6982.txt
+15/02-20:12:39: Comando completado: b|CONSUMIDOR FINAL|0|C|2
+15/02-20:12:39: Respuesta: 00800600
+15/02-20:12:39: Comando completado: @|B|T
+15/02-20:12:39: Respuesta: 0080360020
+15/02-20:12:39: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-20:12:39: Respuesta: 00803600
+15/02-20:12:39: Comando completado: C|P|Subtotal|1
+15/02-20:12:39: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-20:12:39: Comando completado: D|Efectivo|0.01|T|1
+15/02-20:12:39: Respuesta: 00803600+0.00
+15/02-20:12:39: Comando completado: E
+15/02-20:12:39: Respuesta: 0080060020
+15/02-20:12:39: Archivo u:\4\mandar\f6982.txt finalizado
+15/02-20:38:41: **START SPOOLER**
+15/02-20:38:41: A abrir COM4
+15/02-20:38:41: Comando completado: *
+15/02-20:38:41: Comando completado: *
+15/02-20:38:41: Comando completado: D| |0.0|C|0
+15/02-20:38:41: Comando completado: E
+15/02-20:38:41: Comando completado: J
+15/02-20:41:55: Enviando contenido de u:\4\mandar\estado.txt
+15/02-20:41:55: Comando completado: *
+15/02-20:41:55: Respuesta: 008006000000200000000
+15/02-20:41:55: Archivo u:\4\mandar\estado.txt finalizado
+15/02-20:47:22: Enviando contenido de u:\4\mandar\f6989.txt
+15/02-20:47:22: Comando completado: b|CONSUMIDOR FINAL|0|C|2
+15/02-20:47:22: Respuesta: 00800600
+15/02-20:47:22: Comando completado: @|B|T
+15/02-20:47:22: Respuesta: 008036001
+15/02-20:47:22: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-20:47:22: Respuesta: 00803600
+15/02-20:47:22: Comando completado: C|P|Subtotal|1
+15/02-20:47:22: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-20:47:22: Comando completado: D|Efectivo|0.01|T|1
+15/02-20:47:22: Respuesta: 00803600+0.00
+15/02-20:47:22: Comando completado: E
+15/02-20:47:22: Respuesta: 008006001
+15/02-20:47:22: Archivo u:\4\mandar\f6989.txt finalizado
+15/02-20:47:47: Enviando contenido de u:\4\mandar\f6989.txt
+15/02-20:47:47: Comando completado: b|NEUNAN HUGO|20084219712|I|C
+15/02-20:47:47: Respuesta: 00800600
+15/02-20:47:47: Comando completado: @|B|T
+15/02-20:47:47: Respuesta: 008036002
+15/02-20:47:47: Comando completado: B|COMESTIBLES|0.01|1.00|21.00|M|0.0|1|T
+15/02-20:47:47: Respuesta: 00803600
+15/02-20:47:47: Comando completado: C|P|Subtotal|1
+15/02-20:47:47: Respuesta: 0080360010.0100.0020.0000.0000.000
+15/02-20:47:47: Comando completado: D|Efectivo|0.01|T|1
+15/02-20:47:47: Respuesta: 00803600+0.00
+15/02-20:47:47: Comando completado: E
+15/02-20:47:47: Respuesta: 008006002
+15/02-20:47:47: Archivo u:\4\mandar\f6989.txt finalizado
+16/02-00:40:49: **START SPOOLER**
+16/02-00:40:49: A abrir COM4
+16/02-00:40:49: Comando completado: *
+16/02-00:40:49: Comando completado: *
+16/02-00:40:50: Comando completado: D| |0.0|C|0
+16/02-00:40:50: Comando completado: E
+16/02-00:40:50: Comando completado: J
+16/02-00:46:48: Enviando contenido de u:\4\mandar\estado.txt
+16/02-00:46:48: Comando completado: *
+16/02-00:46:48: Respuesta: 008006002000200000000
+16/02-00:46:48: Archivo u:\4\mandar\estado.txt finalizado
+16/02-00:48:32: Enviando contenido de u:\4\mandar\estado.txt
+16/02-00:48:32: Comando completado: *
+16/02-00:48:32: Respuesta: 008006002000200000000
+16/02-00:48:32: Archivo u:\4\mandar\estado.txt finalizado
+16/02-00:58:05: Enviando contenido de u:\4\mandar\estado.txt
+16/02-00:58:05: Comando completado: *
+16/02-00:58:05: Respuesta: 008006002000200000000
+16/02-00:58:05: Archivo u:\4\mandar\estado.txt finalizado
+16/02-01:05:05: Enviando contenido de u:\4\mandar\estado.txt
+16/02-01:05:05: Comando completado: *
+16/02-01:05:05: Respuesta: 008006002000200000000
+16/02-01:05:05: Archivo u:\4\mandar\estado.txt finalizado
+16/02-01:05:08: Enviando contenido de u:\4\mandar\estado.txt
+16/02-01:05:08: Comando completado: *
+16/02-01:05:08: Respuesta: 008006002000200000000
+16/02-01:05:08: Archivo u:\4\mandar\estado.txt finalizado
+16/02-01:05:11: Enviando contenido de u:\4\mandar\estado.txt
+16/02-01:05:11: Comando completado: *
+16/02-01:05:11: Respuesta: 008006002000200000000
+16/02-01:05:11: Archivo u:\4\mandar\estado.txt finalizado
+16/02-01:05:14: Enviando contenido de u:\4\mandar\estado.txt
+16/02-01:05:14: Comando completado: *
+16/02-01:05:14: Respuesta: 008006002000200000000
+16/02-01:05:14: Archivo u:\4\mandar\estado.txt finalizado
+16/02-01:05:17: Enviando contenido de u:\4\mandar\estado.txt
+16/02-01:05:17: Comando completado: *
+16/02-01:05:17: Respuesta: 008006002000200000000
+16/02-01:05:17: Archivo u:\4\mandar\estado.txt finalizado
+16/02-01:14:35: Enviando contenido de u:\4\mandar\estado.txt
+16/02-01:14:35: Comando completado: *
+16/02-01:14:35: Respuesta: 008006002000200000000
+16/02-01:14:35: Archivo u:\4\mandar\estado.txt finalizado

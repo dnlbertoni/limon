@@ -1,0 +1,20 @@
+/**
+* Version 3
+*
+*/
+
+/**
+* Unificacion para la libreria template
+**/
+
+/**
+* ultima actualizacion: 15/01/2012
+* se modifico el modulo de ctacte para hacerlo mas integral a la informacion
+**/
+
+
+/**
+* ultima actualizacion: 12/10/2011
+* se modifico el codigo de factura.php para que se puede elegir por que via imprimir
+* esta seteado por codigo en una variable no es modificable por el usuario
+**/
