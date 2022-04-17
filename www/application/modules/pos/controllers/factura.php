@@ -2,9 +2,9 @@
 class Factura extends MY_Controller{
   var $puesto;
   var $PrinterRemito;
+  var $cajero;
   function  __construct() {
     parent::__construct();
-    $this->puesto = PUESTO;
     $this->PrinterRemito=2; // 1 controlador 2 laser
     $this->load->model('Articulos_model','',true);
     $this->load->model('Tmpmovim_model', '', true);
@@ -12,6 +12,13 @@ class Factura extends MY_Controller{
     $this->load->model('Cuenta_model','',true);
     $this->load->model('Facencab_model', '',true);
     $this->load->model('cuenta/Cuenta_model','',true);
+    $this->load->model('Cajeros_model','',true);
+    $this->cajero = $this->Cajeros_model->getPuestoByIp($_SERVER['REMOTE_ADDR']); 
+    if(empty($this->cajero)){
+      $this->puesto = PUESTO;
+    }else{
+      $this->puesto = $this->cajero->puesto_cf;
+    }
   }
   function presupuesto(){
     //busco datos del previo
@@ -187,7 +194,21 @@ class Factura extends MY_Controller{
      * 6 dnf para cuenta corriente sin factura
      */
     //genero el archivo
-    switch($tipcom_id){
+    switch($this->cajero->tipo_cf){
+      case 'cf_1g':
+        $cfg_comp =  0 * 10 + $tipcom_id;
+        break;
+      case 'cf_2g':
+        $cfg_comp = 1 * 10 + $tipcom_id;
+        break;
+      case 'ws':
+        $cfg_comp = 3 * 10 + $tipcom_id;
+        break;
+      case 'ws':
+        $cfg_comp = 4 * 10 + $tipcom_id;
+        break;
+    };
+    switch($cfg_comp){
       case 1:
         $nom_archiv = $this->_imprimeTicket($puesto, $idencab, $items, $total);
         $data['file']      = $nom_archiv;
@@ -540,6 +561,21 @@ class Factura extends MY_Controller{
     $this->ticket->CerrarTicket();
     return $nom_archiv;
   }
+  private function _imprimeTicketh250($puesto, $idencab, $items, $total){
+    $this->load->library("hasar250");
+    $this->load->library("ticket");
+    $this->ticket->setPuesto($puesto);
+    $comprobante = "t";
+    $nom_archiv = $comprobante . $idencab;
+    $this->ticket->nombres($nom_archiv);
+    $this->ticket->AbrirTicket();
+    //$Cf->TextoTicket();
+    $this->ticket->ItemTicket($items);
+    $this->ticket->SubTotalTicket();
+    $this->ticket->TotalTicket($total);
+    $this->ticket->CerrarTicket();
+    return $nom_archiv;
+  }
   function _imprimeFactura($puesto, $idencab, $items, $total, $cliente){
     $this->load->library("hasar");
     $this->load->library("df");
@@ -571,7 +607,7 @@ class Factura extends MY_Controller{
     $this->cnf->ItemsDNF($items, $detalle);
     $this->cnf->CierroDNF();
     return $nom_archiv;
-}
+  }
   function _imprimeDNFCtaCte($ptorem,$numrem,$puesto, $numero, $cliente, $importe){
     $this->load->library('hasar');
     $this->load->library('cnf');
@@ -587,7 +623,7 @@ class Factura extends MY_Controller{
     $this->cnf->FirmaDNF();
     $this->cnf->CierroDNF();
     return $nom_archiv;
-}
+  }
   function printTicketDoManual($puesto, $idencab, $cuenta, $file){
     $this->load->library('hasar');
     $this->hasar->setPuesto($puesto);

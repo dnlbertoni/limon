@@ -15,6 +15,6 @@ application/logs/*
 !application/logs/.htaccess
 /vendor/
 
-dump/
+migrations/dump/
 .env
 logs/*.txt
