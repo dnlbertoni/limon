@@ -1,0 +1,47 @@
+{
+    "CargarDatosCliente":
+    {
+        "RazonSocial":"ELSIS SRL - Electrosistemas a medida",
+        "NumeroDocumento": "22222222226",
+        "ResponsabilidadIVA": "ConsumidorFinal",
+        "TipoDocumento": "TipoCUIT",
+        "Domicilio": "Avenida Julio Argentino Roca 852 - CABA "
+    },    
+    "AbrirDocumento":{
+        "CodigoComprobante": "TiqueFacturaB"
+    },
+    "ImprimirItem":
+    {
+        "Descripcion": "Cable miniplug 1.5",
+        "Cantidad": 1,
+        "PrecioUnitario": 200.00,
+        "CondicionIVA": "Gravado",
+        "AlicuotaIVA": 21.00,
+        "OperacionMonto": "ModoSumaMonto",
+        "TipoImpuestoInterno": "IIVariableKIVA",
+        "MagnitudImpuestoInterno": 2.2,
+        "ModoDisplay": "DisplayNo",
+        "ModoBaseTotal": "ModoPrecioTotal",
+        "UnidadReferencia": 10,
+        "CodigoProducto": 1,
+        "CodigoInterno": "1",
+        "UnidadMedida": "Pack"
+    },
+    "ImprimirPago":
+    {
+        "Descripcion": "Tarjeta de Crédito",
+        "Monto": 200,
+        "Operacion": "Pagar",
+        "ModoDisplay": "DisplayNo",
+        "DescripcionAdicional": "Nro.: *******3245",
+        "CodigoFormaPago": "TarjetaDeCredito",
+        "Cuotas": 6,
+        "Cupones": 1234657,
+        "Referencia": "ABC123"
+    },
+    "CerrarDocumento":
+    {
+        "Copias": 0,
+        "DireccionEMail": "daniel.bertoni@gmail.com"
+    }
+}

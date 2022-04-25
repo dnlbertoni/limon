@@ -1,0 +1,56 @@
+{  
+    "AbrirDocumento":{
+        "CodigoComprobante": "Tique"
+    },
+    "ImprimirItem": [
+        {
+            "Descripcion" : "Cable miniplug 1.5",
+            "Cantidad" : "1.0",
+            "PrecioUnitario" : "200.00",
+            "CondicionIVA" : "Gravado",
+            "AlicuotaIVA" : "21.00",
+            "OperacionMonto" : "ModoSumaMonto",
+            "TipoImpuestoInterno" : "IIVariableKIVA",
+            "MagnitudImpuestoInterno" : "0.00",
+            "ModoDisplay" : "DisplayNo",
+            "ModoBaseTotal" : "ModoPrecioTotal",
+            "UnidadReferencia" : "20",
+            "CodigoProducto" : "",
+            "CodigoInterno" : "C1130",
+            "UnidadMedida" : "Pack"
+        },
+        {
+            "Descripcion" : "Cable miniplug 1.5",
+            "Cantidad" : "1.0",
+            "PrecioUnitario" : "200.00",
+            "CondicionIVA" : "Gravado",
+            "AlicuotaIVA" : "21.00",
+            "OperacionMonto" : "ModoSumaMonto",
+            "TipoImpuestoInterno" : "IIVariableKIVA",
+            "MagnitudImpuestoInterno" : "0.00",
+            "ModoDisplay" : "DisplayNo",
+            "ModoBaseTotal" : "ModoPrecioTotal",
+            "UnidadReferencia" : "20",
+            "CodigoProducto" : "",
+            "CodigoInterno" : "C1130",
+            "UnidadMedida" : "Pack"
+        }        
+    ],
+    "ImprimirPago":
+    {
+        "Descripcion": "Tarjeta de Crédito",
+        "Monto": 400,
+        "Operacion": "Pagar",
+        "ModoDisplay": "DisplayNo",
+        "DescripcionAdicional": "Nro.: *******3245",
+        "CodigoFormaPago": "TarjetaDeCredito",
+        "Cuotas": 6,
+        "Cupones": 1234657,
+        "Referencia": "ABC123"
+    },
+    "CerrarDocumento":
+    {
+        "Copias": 0,
+        "DireccionEMail": "daniel.bertoni@gmail.com"
+    }
+}

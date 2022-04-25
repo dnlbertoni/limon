@@ -3,6 +3,7 @@ class Factura extends MY_Controller{
   var $puesto;
   var $PrinterRemito;
   var $cajero;
+
   function  __construct() {
     parent::__construct();
     $this->PrinterRemito=2; // 1 controlador 2 laser
@@ -220,6 +221,17 @@ class Factura extends MY_Controller{
         $data['accion']    = 'printTicketDo';
         $data['Imprimo']   = 'Ticket';
         break;
+      case 11:
+        $nom_archiv = $this->_imprimeTicket2g($puesto, $idencab, $items, $total);
+        $data['file']      = $nom_archiv;
+        $data['puesto']    = $puesto;
+        $data['idencab']   = $idencab;
+        $data['cuenta']    = $cuenta;
+        $data['tipcom_id'] = 1;
+        $data['DNF']       = $vale;
+        $data['accion']    = 'printTicketDo';
+        $data['Imprimo']   = 'Ticket';
+        break;
       case 2:
         $data['file']      = $this->_imprimeFactura($puesto, $idencab, $items, $total, $cliente);
         $data['puesto']    = $puesto;
@@ -249,7 +261,21 @@ class Factura extends MY_Controller{
         $data['Imprimo']   = 'Comprobante';
         break;
       };
-    $this->load->view('pos/factura/carga', $data);
+    switch($this->cajero->tipo_cf){
+      case 'cf_1g':
+        $this->load->view('pos/factura/carga', $data);
+        break;
+      case 'cf_2g':
+        $this->load->view('pos/factura/carga2g', $data);
+        break;
+      case 'ws':
+        $this->load->view('pos/factura/carga', $data);
+        break;
+      default:
+        $this->load->view('pos/factura/carga', $data);
+        break;
+    };
+
   }
   function printCtaCte($cuenta, $puesto, $numero, $importe, $idFacencab){
     $this->output->enable_profiler(true);
@@ -561,20 +587,15 @@ class Factura extends MY_Controller{
     $this->ticket->CerrarTicket();
     return $nom_archiv;
   }
-  private function _imprimeTicketh250($puesto, $idencab, $items, $total){
-    $this->load->library("hasar250");
-    $this->load->library("ticket");
-    $this->ticket->setPuesto($puesto);
-    $comprobante = "t";
-    $nom_archiv = $comprobante . $idencab;
-    $this->ticket->nombres($nom_archiv);
-    $this->ticket->AbrirTicket();
-    //$Cf->TextoTicket();
-    $this->ticket->ItemTicket($items);
-    $this->ticket->SubTotalTicket();
-    $this->ticket->TotalTicket($total);
-    $this->ticket->CerrarTicket();
-    return $nom_archiv;
+  private function _imprimeTicket2g($puesto, $idencab, $items, $total){
+    $this->load->library("Hasar250");
+    $this->load->library("Ticket2G");
+    $T = new Ticket2G('192.168.10.106:180');
+    $T->setItems($items);
+    print_r($items[0]);
+    print_r($T->getComprobante());die();
+    $T->setPagos($total);
+    return true;
   }
   function _imprimeFactura($puesto, $idencab, $items, $total, $cliente){
     $this->load->library("hasar");
