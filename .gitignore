@@ -10,11 +10,13 @@ user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 
 #codeigniter 3
-application/logs/*
+www/application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+www/fiscal/3/*
 
 migrations/dump/
 .env
 logs/*.txt
+logs/*.php
