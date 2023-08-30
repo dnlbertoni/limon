@@ -1,0 +1,40 @@
+name: SSH Pull and Docker Compose
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    env:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      SSH_HOST: example.com
+      SSH_USER: your-ssh-user
+      
+      REPO_PATH: /path/to/your/repo
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa $SSH_HOST >> ~/.ssh/known_hosts
+
+    - name: Pull latest changes
+      run: |
+        ssh $SSH_USER@$SSH_HOST "cd $REPO_PATH && git pull"
+
+    - name: Stop and remove containers
+      run: |
+        ssh $SSH_USER@$SSH_HOST "cd $REPO_PATH && docker-compose down"
+
+    - name: Start containers
+      run: |
+        ssh $SSH_USER@$SSH_HOST "cd $REPO_PATH && docker-compose up -d"
