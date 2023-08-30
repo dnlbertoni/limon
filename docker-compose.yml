@@ -11,7 +11,7 @@ services:
             MYSQL_USER: ${MYSQL_USER}
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} 
         volumes:
-            - ./dump:/docker-entrypoint-initdb.d
+            - ./migrations/00/:/docker-entrypoint-initdb.d
             - ./conf:/etc/mysql/conf.d
             - persistent:/var/lib/mysql
         networks:
