@@ -44,8 +44,8 @@ services:
         ports:
             - 8081:80
         environment:
-            MYSQL_USER: root
-            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} 
+            PMA_HOST: ${ERP_HOSTNAME}
+            PMA_PORT:  ${ERP_DB_PORT}
+            PMA_ARBITRARY: 1
 volumes:
     persistent:
