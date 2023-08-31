@@ -47,5 +47,6 @@ services:
             PMA_HOST: ${ERP_HOSTNAME}
             PMA_PORT:  ${ERP_DB_PORT}
             PMA_ARBITRARY: 1
+            UPLOAD_LIMIT: 102400K
 volumes:
     persistent:
