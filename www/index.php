@@ -19,7 +19,7 @@
  *
  */
 	define('ENVIRONMENT', getenv('AMBIENTE'));
-	echo ENVIRONMENT;
+	echo "ambiente -->" ENVIRONMENT;
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
