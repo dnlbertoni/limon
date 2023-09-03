@@ -20,6 +20,7 @@
  */
 	define('ENVIRONMENT', getenv('AMBIENTE'));
 	echo "ambiente -->" ENVIRONMENT;
+	die();	
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
