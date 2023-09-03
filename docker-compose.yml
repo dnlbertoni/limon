@@ -33,6 +33,7 @@ services:
             ERP_PRREMITO: ${ERP_PRREMITO}
             ERP_PRCARTEL: ${ERP_PRCARTEL}
             ERP_EMP_NOMB: ${ERP_EMP_NOMB}
+            AMBIENTE: ${AMBIENTE}
 #        links:
 #            - db
         networks:

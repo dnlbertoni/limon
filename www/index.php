@@ -18,8 +18,8 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'activo');
-	echo "ambiente -->". getenv('AMBIENTE');
+	define('ENVIRONMENT', getenv('AMBIENTE'));
+	echo "ambiente -->". ENVIRONMENT;
 	die();	
 /*
  *---------------------------------------------------------------
