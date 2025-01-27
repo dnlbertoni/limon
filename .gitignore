@@ -18,3 +18,4 @@ application/logs/*
 migrations/dump/
 .env
 logs/*.txt
+Z9999*.sql

@@ -4,6 +4,7 @@ class Factura extends MY_Controller{
   var $PrinterRemito;
   var $cajero;
 
+
   function  __construct() {
     parent::__construct();
     $this->PrinterRemito=2; // 1 controlador 2 laser
@@ -205,10 +206,11 @@ class Factura extends MY_Controller{
       case 'ws':
         $cfg_comp = 3 * 10 + $tipcom_id;
         break;
-      case 'ws':
-        $cfg_comp = 4 * 10 + $tipcom_id;
+      default:
+        $cfg_comp = 0 * 10 + $tipcom_id;
         break;
     };
+    
     switch($cfg_comp){
       case 1:
         $nom_archiv = $this->_imprimeTicket($puesto, $idencab, $items, $total);
@@ -247,6 +249,7 @@ class Factura extends MY_Controller{
         $numrem            = $this->Numeradores_model->getNextRemito($ptorem);
         $firma             = ($vale==0)?false:true;
         if($this->PrinterRemito==1){
+          $detalle ="";
           $data['file']      = $this->_imprimeDNF($ptorem,$numrem,$puesto, $idencab, $cliente,$items,$detalle,$firma);
         }else{
           $data['file']      = $this->_imprimeDNFLaser($ptorem,$numrem,$puesto, $idencab, $cliente,$items, false);
@@ -256,11 +259,13 @@ class Factura extends MY_Controller{
         $data['cuenta']    = $cuenta;
         $data['tipcom_id'] = 6;
         $data['DNF']       = $vale;
-        //$data['accion']    = 'printRemitoDo';
         $data['accion']    = 'printRemitoDoLaser';
         $data['Imprimo']   = 'Comprobante';
         break;
-      };
+      default:  
+        echo "error: $cfg_comp no implementado";
+        break;
+    };
     switch($this->cajero->tipo_cf){
       case 'cf_1g':
         $this->load->view('pos/factura/carga', $data);
@@ -324,8 +329,7 @@ class Factura extends MY_Controller{
     $this->hasar->setPuesto($puesto);
     $this->hasar->nombres($this->input->post('file'));
     $respuesta  = $this->hasar->RespuestaFull();
-    //$respEstado = $this->hasar->Estado();
-    //$cuenta = $this->Tmpmovim_model->getCuenta($idencab, $puesto);
+
     $numero = $this->hasar->last_print;
     $items  = $this->Tmpmovim_model->itemsComprobante($puesto, $idencab);
     $letra = "T";
