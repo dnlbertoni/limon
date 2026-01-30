@@ -1,6 +1,6 @@
 """
-Hasar Fiscal Printer Service - Version 2.0
-HTTP/JSON API communication with modern fiscal printers
+Servicio de Impresora Fiscal Hasar - Versión 2.0
+Comunicación HTTP/JSON API con impresoras fiscales modernas
 """
 import httpx
 import json
@@ -9,7 +9,7 @@ from app.core.config import settings
 
 
 class Hasar2Service:
-    """Service for Hasar 2.0 fiscal printer communication via HTTP API"""
+    """Servicio para comunicación con impresora fiscal Hasar 2.0 vía HTTP API"""
     
     def __init__(self, host: Optional[str] = None, password: Optional[str] = None):
         self.host = host or settings.HASAR_2_HOST
@@ -18,12 +18,12 @@ class Hasar2Service:
         self.base_url = f"http://{self.host}:{self.port}/fiscal.json"
         
     def _get_auth(self) -> tuple:
-        """Get authentication credentials"""
-        # Password format is ":password"
+        """Obtener credenciales de autenticación"""
+        # Formato de contraseña es ":password"
         return ("", self.password.lstrip(":"))
     
     async def _send_command(self, command: Dict) -> Dict:
-        """Send command to fiscal printer via HTTP"""
+        """Enviar comando a la impresora fiscal vía HTTP"""
         headers = {
             "Content-Type": "application/json",
             "Accept": "application/json",
@@ -47,12 +47,12 @@ class Hasar2Service:
             return {"error": f"Error: {str(e)}"}
     
     async def get_status(self) -> Dict:
-        """Get fiscal printer status"""
+        """Obtener estado de la impresora fiscal"""
         command = {"obtenerEstado": {}}
         return await self._send_command(command)
     
     async def open_fiscal_receipt(self, customer_data: Dict) -> Dict:
-        """Open a new fiscal receipt"""
+        """Abrir un nuevo comprobante fiscal"""
         command = {
             "abrirComprobante": {
                 "tipo": customer_data.get("receipt_type", "T"),  # T=Ticket, F=Factura
@@ -67,7 +67,7 @@ class Hasar2Service:
     
     async def print_item(self, description: str, quantity: float, price: float,
                         vat_rate: float = 21.0, discount: float = 0.0) -> Dict:
-        """Print an item on the fiscal receipt"""
+        """Imprimir un ítem en el comprobante fiscal"""
         command = {
             "imprimirItem": {
                 "descripcion": description,
@@ -81,12 +81,12 @@ class Hasar2Service:
         return await self._send_command(command)
     
     async def print_subtotal(self) -> Dict:
-        """Print subtotal"""
+        """Imprimir subtotal"""
         command = {"imprimirSubtotal": {}}
         return await self._send_command(command)
     
     async def print_payment(self, amount: float, payment_type: str = "efectivo") -> Dict:
-        """Print payment"""
+        """Imprimir pago"""
         command = {
             "imprimirPago": {
                 "monto": amount,
@@ -97,17 +97,17 @@ class Hasar2Service:
         return await self._send_command(command)
     
     async def close_fiscal_receipt(self) -> Dict:
-        """Close the fiscal receipt"""
+        """Cerrar el comprobante fiscal"""
         command = {"cerrarComprobante": {}}
         return await self._send_command(command)
     
     async def cancel_fiscal_receipt(self) -> Dict:
-        """Cancel the current fiscal receipt"""
+        """Cancelar el comprobante fiscal actual"""
         command = {"cancelarComprobante": {}}
         return await self._send_command(command)
     
     async def daily_close(self, close_type: str = "Z") -> Dict:
-        """Perform daily close (Z or X report)"""
+        """Realizar cierre diario (reporte Z o X)"""
         command = {
             "cierreZ": {} if close_type == "Z" else "cierreX": {}
         }
@@ -115,19 +115,19 @@ class Hasar2Service:
     
     async def print_complete_receipt(self, receipt_data: Dict) -> List[Dict]:
         """
-        Print a complete receipt with all commands
-        This maintains compatibility with the legacy structure
+        Imprimir un comprobante completo con todos los comandos
+        Esto mantiene compatibilidad con la estructura legacy
         """
         results = []
         
-        # Open receipt
+        # Abrir comprobante
         open_result = await self.open_fiscal_receipt(receipt_data.get("customer", {}))
         results.append({"abrirComprobante": open_result})
         
         if "error" in open_result:
             return results
         
-        # Print items
+        # Imprimir ítems
         for item in receipt_data.get("items", []):
             item_result = await self.print_item(
                 description=item.get("description", ""),
@@ -138,11 +138,11 @@ class Hasar2Service:
             )
             results.append({"imprimirItem": item_result})
         
-        # Print subtotal
+        # Imprimir subtotal
         subtotal_result = await self.print_subtotal()
         results.append({"imprimirSubtotal": subtotal_result})
         
-        # Print payments
+        # Imprimir pagos
         for payment in receipt_data.get("payments", [{"amount": 0, "type": "efectivo"}]):
             payment_result = await self.print_payment(
                 amount=payment.get("amount", 0),
@@ -150,7 +150,7 @@ class Hasar2Service:
             )
             results.append({"imprimirPago": payment_result})
         
-        # Close receipt
+        # Cerrar comprobante
         close_result = await self.close_fiscal_receipt()
         results.append({"cerrarComprobante": close_result})
         
