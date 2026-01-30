@@ -208,10 +208,22 @@ class UserCreate(BaseModel):
 pip install safety
 safety check
 
+# Check for known vulnerabilities
+pip-audit
+
 # Node.js
 npm audit
 npm audit fix
+
+# Regular updates
+pip list --outdated
+npm outdated
 ```
+
+### Security Patches Applied
+
+- **2024-01-30**: Updated FastAPI (0.109.0 → 0.110.0) and python-multipart (0.0.6 → 0.0.22) to fix ReDoS and file write vulnerabilities
+- See [Security Patches](SECURITY_PATCH_2024-01-30.md) for details
 
 ### Backup Strategy
 1. Daily database backups
