@@ -1,0 +1,91 @@
+version: "3.8"
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: limon_postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DATABASE:-limon_db}
+      POSTGRES_USER: ${POSTGRES_USER:-limon_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-limon_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d
+    networks:
+      - limon_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-limon_user}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: limon_backend
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-limon_user}:${POSTGRES_PASSWORD:-limon_password}@postgres:5432/${POSTGRES_DATABASE:-limon_db}
+      SECRET_KEY: ${SECRET_KEY:-your-secret-key-change-in-production}
+      BACKEND_CORS_ORIGINS: ${BACKEND_CORS_ORIGINS:-["http://localhost:3000","http://localhost:5173"]}
+      HASAR_LEGACY_PATH: ${HASAR_LEGACY_PATH:-/var/www/fiscal}
+      HASAR_2_HOST: ${HASAR_2_HOST:-}
+      HASAR_2_PASSWORD: ${HASAR_2_PASSWORD:-}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - /var/www/fiscal:/var/www/fiscal
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - limon_network
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # React Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: limon_frontend
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:8000}
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - limon_network
+    command: npm run dev -- --host 0.0.0.0 --port 3000
+
+  # PgAdmin (Optional - for database management)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: limon_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@limon.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - limon_network
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+networks:
+  limon_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  pgadmin_data:
