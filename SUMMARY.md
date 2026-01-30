@@ -247,11 +247,12 @@ This allows seamless switching between printer versions or using both simultaneo
 
 **Backend:**
 - Python 3.11
-- FastAPI 0.109.0
+- FastAPI 0.110.0 (patched for security)
 - SQLAlchemy 2.0
 - PostgreSQL 15
 - JWT (python-jose)
 - bcrypt
+- python-multipart 0.0.22 (patched for security)
 - Pydantic
 
 **Frontend:**

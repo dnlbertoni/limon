@@ -295,10 +295,12 @@ Para reportar problemas o solicitar ayuda, abrir un issue en GitHub.
 
 ## 🔄 Changelog
 
-### Version 2.0.0 (2024)
+### Version 2.0.0 (2024-01-30)
 - ✅ Migración completa a FastAPI + React + PostgreSQL
 - ✅ Implementación de seguridad completa (JWT, HTTPS, rate limiting)
 - ✅ Servicio unificado para Hasar Legacy y Hasar 2.0
 - ✅ Dockerización de toda la aplicación
 - ✅ Documentación automática de API
 - ✅ Migración de datos desde MySQL
+- ✅ **SECURITY**: Actualización de FastAPI 0.109.0 → 0.110.0 (corrige vulnerabilidad ReDoS)
+- ✅ **SECURITY**: Actualización de python-multipart 0.0.6 → 0.0.22 (corrige 3 vulnerabilidades)
