@@ -108,9 +108,8 @@ class Hasar2Service:
     
     async def daily_close(self, close_type: str = "Z") -> Dict:
         """Realizar cierre diario (reporte Z o X)"""
-        command = {
-            "cierreZ": {} if close_type == "Z" else "cierreX": {}
-        }
+        close_type = close_type.upper()
+        command = {"cierreZ": {}} if close_type == "Z" else {"cierreX": {}}
         return await self._send_command(command)
     
     async def print_complete_receipt(self, receipt_data: Dict) -> List[Dict]:

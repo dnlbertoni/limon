@@ -17,7 +17,7 @@ services:
     networks:
       - limon_network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-limon_user}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-limon_user} -d ${POSTGRES_DATABASE:-limon_db}"]
       interval: 10s
       timeout: 5s
       retries: 5

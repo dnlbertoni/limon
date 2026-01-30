@@ -18,7 +18,21 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["X-XSS-Protection"] = "1; mode=block"
         response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
-        response.headers["Content-Security-Policy"] = "default-src 'self'"
+        
+        # Swagger UI needs to load assets from jsdelivr and a favicon from fastapi.tiangolo.com.
+        # Relax CSP only for docs routes to keep the rest of the API locked down.
+        if request.url.path.startswith("/api/docs"):
+            response.headers["Content-Security-Policy"] = (
+                "default-src 'self'; "
+                "img-src 'self' https://fastapi.tiangolo.com data:; "
+                "style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; "
+                "script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; "
+                "connect-src 'self'; "
+                "font-src 'self' https://cdn.jsdelivr.net; "
+                "object-src 'none'"
+            )
+        else:
+            response.headers["Content-Security-Policy"] = "default-src 'self'"
         
         return response
 
