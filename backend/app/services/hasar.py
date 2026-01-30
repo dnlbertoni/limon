@@ -1,6 +1,6 @@
 """
-Unified Hasar Fiscal Printer Service
-Manages both legacy and 2.0 versions, maintaining the relationship between them
+Servicio Unificado de Impresora Fiscal Hasar
+Gestiona las versiones legacy y 2.0, manteniendo la relación entre ambas
 """
 from typing import Dict, List, Optional, Literal
 from app.services.hasar_legacy import HasarLegacyService
@@ -12,20 +12,20 @@ PrinterVersion = Literal["legacy", "2.0"]
 
 class HasarService:
     """
-    Unified service for Hasar fiscal printers
-    Maintains the relationship between legacy (file-based) and 2.0 (HTTP API) controllers
+    Servicio unificado para impresoras fiscales Hasar
+    Mantiene la relación entre controladores legacy (basados en archivos) y 2.0 (HTTP API)
     """
     
     def __init__(self, version: PrinterVersion = "2.0", point_of_sale: int = 1,
                  host: Optional[str] = None, password: Optional[str] = None):
         """
-        Initialize the Hasar service
+        Inicializar el servicio Hasar
         
         Args:
-            version: "legacy" for file-based or "2.0" for HTTP API
-            point_of_sale: Point of sale number (for legacy)
-            host: Host for 2.0 version
-            password: Password for 2.0 version
+            version: "legacy" para basado en archivos o "2.0" para HTTP API
+            point_of_sale: Número de punto de venta (para legacy)
+            host: Host para versión 2.0
+            password: Contraseña para versión 2.0
         """
         self.version = version
         self.point_of_sale = point_of_sale
@@ -36,14 +36,14 @@ class HasarService:
             self.printer = Hasar2Service(host=host, password=password)
     
     async def get_status(self) -> Dict:
-        """Get fiscal printer status"""
+        """Obtener estado de la impresora fiscal"""
         if self.version == "legacy":
             return self.printer.get_status()
         else:
             return await self.printer.get_status()
     
     async def open_fiscal_receipt(self, customer_data: Dict) -> Dict:
-        """Open a new fiscal receipt"""
+        """Abrir un nuevo comprobante fiscal"""
         if self.version == "legacy":
             result = self.printer.open_fiscal_receipt(customer_data)
             return {"success": result}
@@ -52,7 +52,7 @@ class HasarService:
     
     async def print_item(self, description: str, quantity: float, price: float,
                         vat_rate: float = 21.0, discount: float = 0.0) -> Dict:
-        """Print an item on the fiscal receipt"""
+        """Imprimir un ítem en el comprobante fiscal"""
         if self.version == "legacy":
             result = self.printer.print_item(description, quantity, price, vat_rate)
             return {"success": result}
@@ -60,14 +60,14 @@ class HasarService:
             return await self.printer.print_item(description, quantity, price, vat_rate, discount)
     
     async def close_fiscal_receipt(self) -> Dict:
-        """Close the fiscal receipt"""
+        """Cerrar el comprobante fiscal"""
         if self.version == "legacy":
             return self.printer.close_fiscal_receipt()
         else:
             return await self.printer.close_fiscal_receipt()
     
     async def daily_close(self, close_type: str = "Z") -> Dict:
-        """Perform daily close (Z or X report)"""
+        """Realizar cierre diario (reporte Z o X)"""
         if self.version == "legacy":
             return self.printer.daily_close(close_type)
         else:
@@ -75,23 +75,23 @@ class HasarService:
     
     async def print_complete_receipt(self, receipt_data: Dict) -> List[Dict]:
         """
-        Print a complete receipt with all commands
-        Works with both legacy and 2.0 versions
+        Imprimir un comprobante completo con todos los comandos
+        Funciona con versiones legacy y 2.0
         """
         if self.version == "2.0":
             return await self.printer.print_complete_receipt(receipt_data)
         
-        # For legacy version, simulate the complete process
+        # Para versión legacy, simular el proceso completo
         results = []
         
-        # Open receipt
+        # Abrir comprobante
         open_result = await self.open_fiscal_receipt(receipt_data.get("customer", {}))
         results.append({"abrirComprobante": open_result})
         
         if not open_result.get("success"):
             return results
         
-        # Print items
+        # Imprimir ítems
         for item in receipt_data.get("items", []):
             item_result = await self.print_item(
                 description=item.get("description", ""),
@@ -101,7 +101,7 @@ class HasarService:
             )
             results.append({"imprimirItem": item_result})
         
-        # Close receipt
+        # Cerrar comprobante
         close_result = await self.close_fiscal_receipt()
         results.append({"cerrarComprobante": close_result})
         
@@ -110,17 +110,17 @@ class HasarService:
     @staticmethod
     def get_printer_instance(printer_config: Dict) -> "HasarService":
         """
-        Factory method to create the appropriate printer instance based on configuration
+        Método factory para crear la instancia de impresora apropiada basada en la configuración
         
         Args:
-            printer_config: Configuration dict with keys:
-                - version: "legacy" or "2.0"
-                - point_of_sale: int (for legacy)
-                - host: str (for 2.0)
-                - password: str (for 2.0)
+            printer_config: Diccionario de configuración con claves:
+                - version: "legacy" o "2.0"
+                - point_of_sale: int (para legacy)
+                - host: str (para 2.0)
+                - password: str (para 2.0)
         
         Returns:
-            HasarService instance
+            Instancia de HasarService
         """
         version = printer_config.get("version", "2.0")
         

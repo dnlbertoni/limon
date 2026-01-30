@@ -4,17 +4,17 @@ from pydantic import AnyHttpUrl, validator
 
 
 class Settings(BaseSettings):
-    """Application settings"""
+    """Configuración de la aplicación"""
     
-    # Application
+    # Aplicación
     APP_NAME: str = "Limon ERP"
     ENVIRONMENT: str = "development"
     DEBUG: bool = True
     
-    # Database
+    # Base de datos
     DATABASE_URL: str
     
-    # Security
+    # Seguridad
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
@@ -30,7 +30,7 @@ class Settings(BaseSettings):
             return v
         raise ValueError(v)
     
-    # Hasar Configuration
+    # Configuración Hasar
     HASAR_LEGACY_PATH: str = "/var/www/fiscal"
     HASAR_2_HOST: str = ""
     HASAR_2_PORT: int = 80
