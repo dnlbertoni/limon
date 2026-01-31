@@ -17,8 +17,10 @@ export const authService = {
     return response.data
   },
 
-  async getCurrentUser() {
-    const response = await api.get('/auth/me')
+  async getCurrentUser(token) {
+    const response = await api.get('/auth/me', {
+      headers: token ? { Authorization: `Bearer ${token}` } : undefined
+    })
     return response.data
   },
 }

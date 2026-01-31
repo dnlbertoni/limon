@@ -8,6 +8,6 @@ if [ ! -f .env ]; then
     echo "✓ Created .env file"
 fi
 
-docker-compose -f docker-compose.new.yml up -d
+docker-compose -f docker-compose.yml up -d
 echo "✓ Services started"
 echo "Access at: http://localhost:3000"

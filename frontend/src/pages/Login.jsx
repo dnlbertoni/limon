@@ -19,7 +19,7 @@ export default function Login() {
 
     try {
       const data = await authService.login(username, password)
-      const user = await authService.getCurrentUser()
+      const user = await authService.getCurrentUser(data.access_token)
       login(user, data.access_token)
       navigate('/')
     } catch (err) {

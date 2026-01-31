@@ -36,38 +36,21 @@ docker-compose -f docker-compose.new.yml logs -f
 
 ### 4. Initialize Database
 
+Separamos la inicialización en un script para mayor claridad y reutilización.
+
+Ejecutar (recomendado dentro del contenedor Docker):
+
 ```bash
-# Create tables and admin user
-docker-compose -f docker-compose.new.yml exec backend python -c "
-from app.core.database import engine, Base, SessionLocal
-from app.models.user import User
-from app.models.article import Article, Brand, Category
-from app.models.invoice import Invoice, InvoiceType, InvoiceItem, Customer
-from app.core.security import get_password_hash
-
-# Create tables
-Base.metadata.create_all(bind=engine)
-
-# Create admin user
-db = SessionLocal()
-admin = User(
-    username='admin',
-    email='admin@limon.com',
-    hashed_password=get_password_hash('admin123'),
-    full_name='Administrator',
-    is_superuser=True
-)
-db.add(admin)
-db.commit()
-db.close()
-
-print('✓ Database initialized')
-print('✓ Admin user created')
-print('  Username: admin')
-print('  Password: admin123')
-print('  CHANGE PASSWORD AFTER FIRST LOGIN!')
-"
+docker-compose -f docker-compose.yml exec backend python backend/scripts/init_db.py
 ```
+
+O ejecutar localmente si la base de datos es accesible desde el host:
+
+```bash
+python backend/scripts/init_db.py
+```
+
+Para más detalles y comandos específicos del backend, ver: [docs/QUICKSTART_BACKEND.md](QUICKSTART_BACKEND.md)
 
 ### 5. Access Application
 
@@ -81,6 +64,11 @@ print('  CHANGE PASSWORD AFTER FIRST LOGIN!')
 - Password: `admin123`
 
 ⚠️ **Change the default password immediately!**
+
+**CORS note (dev):**
+- Ensure `BACKEND_CORS_ORIGINS` is a JSON list, for example:
+  `["http://localhost:3000","http://localhost:5173"]`
+- If you see CORS errors after changes, restart the backend and hard refresh the browser.
 
 ## 🛠️ Development Setup (Without Docker)
 

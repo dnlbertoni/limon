@@ -345,6 +345,9 @@ The system is production-ready with:
 - **Deployment**: [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
 - **Migration**: [docs/MIGRATION.md](docs/MIGRATION.md)
 
+- **Quickstart Backend**: [docs/QUICKSTART_BACKEND.md](docs/QUICKSTART_BACKEND.md)
+- **Quickstart Frontend**: [docs/QUICKSTART_FRONTEND.md](docs/QUICKSTART_FRONTEND.md)
+
 ---
 
 **Version**: 2.0.0  

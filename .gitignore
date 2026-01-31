@@ -79,6 +79,9 @@ Thumbs.db
 # Logs
 logs/
 *.log
+deprecar/**/logs/
+deprecar/**/.logs/
+deprecar/**/log/
 
 # Docker
 .dockerignore
@@ -87,6 +90,11 @@ logs/
 tmp/
 temp/
 *.tmp
+deprecar/**/tmp/
+deprecar/**/temp/
+
+# Deprecated tree runtime files
+deprecar/**/cache/
 
 # Backend specific
 backend/.env

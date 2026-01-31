@@ -105,6 +105,12 @@ docker-compose -f docker-compose.new.yml logs -f
 - **API Docs**: http://localhost:8000/api/docs
 - **PgAdmin**: http://localhost:5050
 
+Guías rápidas específicas:
+
+- Quickstart general: [docs/QUICKSTART.md](docs/QUICKSTART.md)
+- Quickstart backend: [docs/QUICKSTART_BACKEND.md](docs/QUICKSTART_BACKEND.md)
+- Quickstart frontend: [docs/QUICKSTART_FRONTEND.md](docs/QUICKSTART_FRONTEND.md)
+
 ## 📊 Migración de Datos
 
 Para migrar datos desde la base MySQL existente a PostgreSQL:

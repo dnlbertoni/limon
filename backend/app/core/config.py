@@ -1,4 +1,5 @@
 from typing import List
+import json
 from pydantic_settings import BaseSettings
 from pydantic import AnyHttpUrl, validator
 
@@ -24,9 +25,12 @@ class Settings(BaseSettings):
     
     @validator("BACKEND_CORS_ORIGINS", pre=True)
     def assemble_cors_origins(cls, v):
-        if isinstance(v, str) and not v.startswith("["):
+        if isinstance(v, str):
+            if v.startswith("["):
+                # Accept JSON-style list strings from env (e.g. ["http://localhost:3000"])
+                return json.loads(v)
             return [i.strip() for i in v.split(",")]
-        elif isinstance(v, (list, str)):
+        elif isinstance(v, list):
             return v
         raise ValueError(v)
     
