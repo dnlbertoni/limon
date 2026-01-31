@@ -1,0 +1,48 @@
+# Mapping de tablas y campos (ejemplo para el módulo Artículos)
+# Mantener nombres de tabla y columnas en castellano para facilitar la migración
+
+tbl_articulos:
+  __tablename__: tbl_articulos
+  primary_key: id_articulo
+  columns:
+    id_articulo: INTEGER
+    descripcion_articulo: TEXT
+    preciovta_articulo: NUMERIC
+    preciocosto_articulo: NUMERIC
+    codigobarra_articulo: VARCHAR
+    id_subrubro: INTEGER
+    id_marca: INTEGER
+    fechacreacion_articulo: TIMESTAMP
+    fechamodif_articulo: TIMESTAMP
+    tasaiva_articulo: INTEGER
+    estado_articulo: INTEGER
+
+tbl_subrubros:
+  __tablename__: tbl_subrubros
+  primary_key: id_subrubro
+  columns:
+    id_subrubro: INTEGER
+    descripcion_subrubro: TEXT
+    id_rubro: INTEGER
+
+tbl_rubros:
+  __tablename__: tbl_rubros
+  primary_key: id_rubro
+  columns:
+    id_rubro: INTEGER
+    descripcion_rubro: TEXT
+
+stk_submarcas:
+  __tablename__: stk_submarcas
+  primary_key: id_submarca
+  columns:
+    id_submarca: INTEGER
+    detalle_submarca: TEXT
+    id_marca: INTEGER
+
+stk_marcas:
+  __tablename__: stk_marcas
+  primary_key: id_marca
+  columns:
+    id_marca: INTEGER
+    detalle_marca: TEXT
